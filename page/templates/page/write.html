@@ -1,6 +1,104 @@
 {% extends 'base.html' %}
 {% block body %}
-<div class="container" style="padding-top:60px;">
-    <h3>write</h3>
+<style>
+.col-name{
+    font-size: 18px;
+    color:#ABABAB;
+    display:block;
+    padding:12px 0;
+}
+.row {
+    margin-bottom: 15px;
+}
+</style>
+<!-- <div class="container" style="padding-top:50px; padding-bottom:50px;"> -->
+<div style="padding:5vw 20vw;">
+    <div class="w3-card" style="margin-top:50px; background-color:white;">
+        <form action="{% url 'page:partner' %}" method="POST">
+        <div style="padding: 3vw 8vw 1vw;">
+            <div style="font-size:3.5vw; font-weight:bold; margin-bottom: 30px;">동행구하기</div>
+                {% csrf_token %}
+                <div class="input_row">
+                    <div class="col-name">
+                        제목
+                    </div>
+                    <div class="col-content">
+                        <input type="text" name="title" class="form-control">
+                    </div>
+                </div>
+                <div class="input_row">
+                    <div class="col-name">
+                        내용
+                    </div>
+                    <div class="col-content">
+                        <input type="text" name="content" class="form-control">
+                    </div>
+                </div>
+                <div class="input_row">
+                    <div class="col-name">
+                        행선지
+                    </div>
+                    <div class="col-content">
+                        <input type="text" name="destination" class="form-control">
+                    </div>
+                </div>
+                <div class="input_row">
+                    <div class="col-name">
+                        총인원&구하는 인원
+                    </div>
+                    <div class="col-content">
+                        <input type="text" name="number_people" class="form-control">
+                    </div>
+                </div>
+                <div class="input_row">
+                    <div class="col-name">
+                        현재 남녀 성별/희망하는 성별
+                    </div>
+                    <div class="col-content">
+                        <input type="text" name="sex" class="form-control">
+                    </div>
+                </div>
+                <div class="input_row">
+                    <div class="col-name">
+                        선호하는 여행 스타일
+                    </div>
+                    <div class="col-content">
+                        <input type="text" name="travel_style" class="form-control">
+                    </div>
+                </div>
+                <div class="input_row">
+                    <div class="col-name">
+                        대표 연락처
+                    </div>
+                    <div class="col-content">
+                        <input type="text" name="address" class="form-control">
+                    </div>
+                </div>
+                <div class="input_row">
+                    <div class="col-name">
+                        비밀번호
+                    </div>
+                    <div class="col-content">
+                        <input type="password" name="password_main" class="form-control">
+                    </div>
+                </div>
+                <div class="input_row">
+                    <div class="col-name">
+                        행선지
+                    </div>
+                    <div class="col-content">
+                        <input type="password" name="password_check" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="w3-card"style="height:130px; background-color:#F9F9F9; position:relative;">
+                <div style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%)">
+                    <input type="submit" value="동행 구하기 작성" class="btn btn-primary" style="font-size: 23px; padding:15px 40px;">
+
+
+                </div>
+            </div>
+        </form>
+    </div>
 </div>
 {% endblock %}

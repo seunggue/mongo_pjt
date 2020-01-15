@@ -1,18 +1,12 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block body %}
-<div>
-    <img src="{%static '/partner01.png' %}" alt=""  style="background-repeat:no-repeat; background-size:cover; height:700px; background-position: 50% 50%; width:100%">
+<div style="background-image: url('{% static '/partner01.png' %}'); height:700px; background-repeat:no-repeat; background-size:cover; height:700px; background-position: 50% 50%; width:100%">
+dd
+    <!-- <img src="{%static 'partner01.png' %}" alt=""  style="background-repeat:no-repeat; background-size:cover; height:700px; background-position: 50% 50%; width:100%"> -->
 </div>
-<div class="" style="padding:20px 400px; background-color:white;">
-    <form action="{% url 'page:partner' %}" method="POST">
-        {% csrf_token %}
-        <input type="text" name="title">
-        <input type="text" name="content">
-        <input type="date" name="duedate">
-        <input type="password" name="password">
-        <input type="submit" class="btn btn-primary">
-    </form>
+<div class="container" style="background-color:white;">
+
     <div>
         <h3 style="border-bottom:1px solid #D5D5D5; padding-bottom:15px;">동행 구하기 게시판</h3>
         {% for partner in partners %}

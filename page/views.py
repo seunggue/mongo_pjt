@@ -32,7 +32,14 @@ def detail(request):
 
 def write(request):
     if request.method == 'POST':
-        pass
+        partner = Partner.objects.create(
+            title = request.POST.get('title'),
+            content = request.POST.get('content'),
+            duedate = request.POST.get('duedate'),
+            password = request.POST.get('password'),
+        
+        )
+        return redirect('page:partner')
     else:
 
 
